@@ -8,7 +8,7 @@
 
 <body>
     <div id="header">
-        <a href="/" class="atitle">Aircraft Search</a>
+        <a href="/AircraftSearch/" class="atitle">Aircraft Search</a>
     </div>
     @yield('block')
 
