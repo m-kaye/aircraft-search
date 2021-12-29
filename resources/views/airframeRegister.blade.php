@@ -58,6 +58,7 @@
             <div class="card-header">機体登録 (Excel)</div>
             <div class="card-body" style="text-align:center;">
                 <h4>Excelファイルを選択してください</h4><br>
+                <p>※行数が多いと数分かかることがあります。</p>
                 <form role="form" method="post" action="{{ url('/import') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="file" name="excel_file" id="excel_file"><br><br>
