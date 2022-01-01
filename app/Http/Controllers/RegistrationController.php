@@ -17,7 +17,7 @@ class RegistrationController extends Controller
         return view('airframeRegister');
     }
 
-    //Excel登録
+    //Excel import
     public function import(Request $req)
     {
         Excel::import(new AirplaneImport,$req->file('excel_file'));
@@ -26,7 +26,7 @@ class RegistrationController extends Controller
         return redirect('/');
     }
 
-    //手動登録
+    //import
     public function create(Request $req)
     {
         $req_registrationSymbol = $req->registrationSymbol;

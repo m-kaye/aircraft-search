@@ -71,7 +71,7 @@ class SearchController extends Controller
                 if(isset($result2[0])){
                     $query->where(function($query) use($result2){
                         foreach($result2 as $res){
-                                $query->orWhere('id',$res->airplane_id);
+                            $query->orWhere('id',$res->airplane_id);
                         }
                     });
                     $result = $query->paginate(10);
@@ -89,9 +89,18 @@ class SearchController extends Controller
     public function detail($id)
     {
         $airplane = Airplane::where('id',$id)->first();
-        $log = Log::where('airplane_id',$id)->get();
+        $log = Log::where('airplane_id',$id)->orderBy('date')->get();
         $data = ["airplane"=>$airplane, "log"=>$log];
         return view('detail', $data);
+    }
+
+    public function delete($id)
+    {   
+        //削除
+        $airplane = Log::find($id)->airplane_id;
+        Log::where('id',$id)->delete();
+
+        return redirect('/detail/'.$airplane);        
     }
 
     public function edit(Request $req){

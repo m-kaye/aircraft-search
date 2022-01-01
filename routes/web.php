@@ -24,6 +24,8 @@ Route::get('/detail/{id}',    'App\Http\Controllers\SearchController@detail');
 
 Route::post('/edit',          'App\Http\Controllers\SearchController@edit');
 
+Route::get('/delete/{id}',    'App\Http\Controllers\SearchController@delete');
+
 Route::post('/logedit',       'App\Http\Controllers\SearchController@logedit');
 
 Route::post('/exlogedit',     'App\Http\Controllers\SearchController@exlogedit');

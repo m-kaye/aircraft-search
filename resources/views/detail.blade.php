@@ -210,8 +210,9 @@
                                 </tr>
                                 <tr style="text-align:center;">
                                     <td colspan="2">
-                                        <button data-dismiss="modal" class="btn btn-sm btn-outline-secondary">キャンセル</button>　
+                                        <button data-dismiss="modal" class="btn btn-sm btn-outline-secondary">キャンセル</button>
                                         <input type="submit" value="編集" class="btn btn-sm btn-info">
+                                        <a href="" id="delid" class="btn btn-sm btn-danger">削除</a>
                                     </td>
                                 </tr>
                             </table>
@@ -305,6 +306,9 @@
             modal.find('#owner').val(owner);
             modal.find('#plant').val(plant);
             modal.find('#note').val(note);
+
+            var target = document.getElementById("delid");
+            target.href = "/delete/"+id;
         })
 
         // exlogモーダルにパラメータ渡し
