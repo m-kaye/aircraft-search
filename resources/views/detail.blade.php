@@ -308,7 +308,7 @@
             modal.find('#note').val(note);
 
             var target = document.getElementById("delid");
-            target.href = "/delete/"+id;
+            target.href = "/AircraftSearch/delete/"+id;
         })
 
         // exlogモーダルにパラメータ渡し
