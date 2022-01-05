@@ -96,6 +96,15 @@ class SearchController extends Controller
 
     public function delete($id)
     {   
+        //履歴&機体削除
+        Log::where('airplane_id', $id)->delete();
+        Airplane::where('id',$id)->delete();
+
+        return redirect('/');
+    }    
+
+    public function logdelete($id)
+    {   
         //削除
         $airplane = Log::find($id)->airplane_id;
         Log::where('id',$id)->delete();

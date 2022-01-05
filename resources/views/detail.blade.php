@@ -148,6 +148,7 @@
                                     <td colspan="2">
                                         <button data-dismiss="modal" class="btn btn-sm btn-outline-secondary">キャンセル</button>　
                                         <input type="submit" value="編集" class="btn btn-sm btn-info">
+                                        <a href="/AircraftSearch/delete/{{$airplane->id}}" class="btn btn-sm btn-danger">削除</a>
                                     </td>
                                 </tr>
                             </table>
@@ -308,7 +309,7 @@
             modal.find('#note').val(note);
 
             var target = document.getElementById("delid");
-            target.href = "/AircraftSearch/delete/"+id;
+            target.href = "/AircraftSearch/logdelete/"+id;
         })
 
         // exlogモーダルにパラメータ渡し
